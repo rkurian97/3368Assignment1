@@ -49,7 +49,26 @@ public class Controller implements Initializable
 
 
         ObservableList<Employee> items = employeeListView.getItems();
-        
+        EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                firstNameTextField.setText("");
+                lastNameTextField.setText("");
+                isActiveCheckBox.setSelected(false);
+            }
+        };
+        clear1.setOnAction(event1);
+
+        EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                Employee employee1= new Employee();
+                employee1.firstName= firstNameTextField.getText();
+                employee1.lastName= lastNameTextField.getText();
+                employee1.isActive= isActiveCheckBox.isSelected();
+                items.add(employee1);
+            }
+        };
+        add1.setOnAction(event2);
+
 
     }
 }

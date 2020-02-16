@@ -68,7 +68,12 @@ public class Controller implements Initializable
             }
         };
         add1.setOnAction(event2);
-
-
+        EventHandler<ActionEvent> event3 = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                items.remove(employeeListView.getSelectionModel().getSelectedItem());
+            }
+        };
+        delete1.setOnAction(event3);
+        
     }
 }
